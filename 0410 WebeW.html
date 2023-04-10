@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>고객의 소리</h1>
+    <form action="" name="form1" method="post"><br>
+        아이디: <input type="text" name="id"><br>
+        구매번호: <input type="number" name="purchasenumber"><br>
+        패스워드: <input type="password" name="password"><br>
+        제품을 평가해주세요<br>
+        <textarea name="evaluate" rows="5" cols="30"></textarea><br>
+        <input type="reset" name="reset" value="초기화">
+        <input type="submit" name="submit" value="제출">
+
+    </form>
+    <h2>선호도조사입니다.</h2>
+    <form action="" name="form2" method="post">
+        성별: 
+        <input type="radio" name="gender" value="male">남성
+        <input type="radio" name="gender" value="female">여성<br>
+        과일선택
+        <input type="checkbox" name="fruit" value="apple">사과
+        <input type="checkbox" name="fruit" value="grape" checked>포도
+        <input type="checkbox" name="fruit" value="orange">오렌지
+    </form>
+    <h3>버튼 다루기</h3>
+        <input type="button" value="눌러보세요" onclick="alert('Hello world!')"><br>
+        <button type="button" onclick="alert('HaHa')"><img src="./haha.jpg" width="500" height="500"></button>
+</body>
+</html>
