@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <
+</head>
+<body>
+    <h1>입력양식 추가 실습</h1>
+    <form method="post" action="" name="form1">
+        <fieldset>
+            <legend>인적사항 조사</legend>
+        이름을 입력하세요:<input type="text" required placeholder="예시>홍길동"><br>
+        학번을 입력하세요:<input type="text" autofocus   placeholder="예시>10600"><br>
+        좋아하는 색을 고르세요:<input type="color"><br>
+        </fieldset>
+        <input type="submit" value="제출"><br>
+        키를 입력하세요:
+        <input type="number" name="number" min="130" max="200" step="5" value="170">
+        좋아하는 숫자를 입력하세요(1~10 범위 내의 숫자):
+        <input type="range" min="1" max="10" value="5">
+        <input type="[tel]" name="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
+        비밀번호를 분실했을 때 질문:
+        <select name="password">
+            <option value="town">내가 태어난 동네 이름은?</option>
+            <option value="elementry" selected>나의 초등학교 이름은?</option>
+            <option value="animal">어렸을 때 키우던 고양이 이름은?</option>
+        </select>
+        <input list="languages" name="brr">
+        <datalist id="browsers">
+            <option value="chrome">크롬</option>
+            <option value="edge">마이크로소프트 엣지</option>
+            <option value="firefox">파이어폭스</option>
+            <option value="safari">사파리</option>
+            <option value="explorer">인터넷 익스플로러</option>
+            <option value="opera">오페라</option>
+        </datalist>
+        <datalist id="languages">
+            <option value="C">C언어</option>
+            <option value="python">파이썬</option>
+            <option value="Rust">러스트</option>
+
+        </datalist>
+    </form>
+</body>
+</html>

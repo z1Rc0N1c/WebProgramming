@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무엇이 당신의 통학 수단인가요?</title>
+    <link rel="stylesheet" href="./syle.css">
+</head>
+<body>
+    <form action="" method="post" name="transport">
+        <fieldset>
+            <legend>학교로 어떻게 오시나요?</legend>
+            통학 수단은: 
+            <select value="transport" required>
+                <option value="tjsxor">통학 수단을 선택하세요!</option>
+                <option value="Bus">버스</option>
+                <option value="Subway">전철</option>
+                <option value="Taxi">택시</option>
+                <option value="Walk">도보</option>
+                <option value="Bicycle">자전거</option>
+                <option value="Car">자가용</option>
+                <option value=".etc">기타</option>
+            </select><br>
+            혹시 다른 수단이신가요?&nbsp;<input type="text" placeholder="오토바이">
+        </fieldset>
+    </form><br>
+    <form action="" method="post" name="time">
+        <fieldset>
+            <legend>학교까지 얼마나 걸리시나요?</legend>
+            통학 시간은: 
+            <input list="time" name="about">
+            <datalist id="time">
+                <option >30분 이하</option>
+                <option>30분~60분</option>
+                <option>60분 이상</option>
+            </datalist>
+        </fieldset>
+    </form><br>
+    <button type="submit" value="제출">제출</button>
+</body>
+</html>

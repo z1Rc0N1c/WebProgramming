@@ -1,0 +1,38 @@
+input{
+    border-color: bisque;
+    border-radius: 15px;
+    background-color: black ;
+    color: lightyellow;
+    text-align: center;
+    width: 5cm;
+    height: 2cm;
+}
+select{
+    border-color: antiquewhite;
+    border-radius: 15px;
+    background-color: black;
+    color: lightsteelblue;
+    width: 5cm;
+    height: 1cm;
+}
+fieldset{
+    border-color: blue;
+    border-radius: 15px;
+    width: 20cm;
+    text-align: center;
+    border-width: 5px;
+}
+legend{
+    text-align: center;
+    font-weight: bold;
+
+}
+button{
+    text-align: center;
+    font-weight: bold;
+    background-color: aliceblue;
+    color: gray;
+    border-radius: 10px;
+    width: 7cm;
+    height: 5cm;
+}
