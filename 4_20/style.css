@@ -1,0 +1,12 @@
+h1{font-family: 'Nanum Pen Script', cursive;}
+.fonttest1{color: blueviolet;}
+.fonttest2{direction: rtl;}
+.fonttest3{letter-spacing: -0.1ch;}
+.fonttest4{line-height: 8ch;}
+.fonttest5{text-align: center;}
+.fonttest6{text-decoration: underline; text-decoration-color: royalblue;}
+.fonttest7{text-indent: 2ch;}
+.fonttest8{text-shadow: 5px 5px cornflowerblue;}
+.fonttest9{text-transform: uppercase;}
+*{font-family: 'Nanum Pen Script', cursive;
+    font-size: 5cm;}
