@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text]{
+            border: 3px royalblue solid;
+            border-radius: 5px;
+            width: 90%;
+            height: 30px;
+        }
+        input[type=text]:hover{
+            background-image: url(./vscode.png);
+            background-size: 30px 90%;
+            background-repeat: no-repeat;
+        }
+        input[type=text]:focus{
+            color: darkgoldenrod;
+        }
+        textarea{
+            width: 90%;
+            padding: 5px 10px;
+            margin: 10px 0px;
+            display: inline-block;
+            border: 2px solid royalblue;
+            border-radius: 5px;
+            height: 200px;
+            background-image: url(./vscode.png);
+            background-size: 200px 90%;
+            background-repeat: no-repeat;
+        }
+        input[type=submit]{
+            background-color: #04AA6D;
+            border: none;
+            color: whitesmoke;
+            padding: 16px 32px;
+            margin: 5px 10px;
+        }
+        input[type=submit]:focus{
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>상품 평</h1>
+    받으신 상품을 평가해주세요
+    <form action="">
+        <label for="name">이름</label><br>
+        <input type="text" id="name" name="name" placeholder="이름"><br>
+        <label for="email">이메일</label><br>
+        <input type="text" name="email" id="email" placeholder="이메일"><br>
+        <label for="subject">상품 평</label><br>
+        <textarea name="subject" id="subject" placeholder="상품을 평가해주세요"></textarea><br>
+        <input type="submit" value="Submit"><br>
+    </form>
+</body>
+</html>
