@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid black;
+            transition: width 5s, height 5s, border 5s, transform 5s;
+            -webkit-transition: width 5s height 5s border 5s transform 5s;
+        }
+        div:hover{
+            width: 200px;
+            height: 100px;
+            border: 10px solid red;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            background-color: darkgoldenrod;
+        }
+        .first{
+            margin-left: 110px;
+        }
+        .second{
+            margin-left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div>여기가 박스입니다.</div>
+    <div class="first">여기가 박스입니다.</div>
+    <div class="second">여기가 박스입니다.</div>
+</body>
+</html>
