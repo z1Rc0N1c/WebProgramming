@@ -1,0 +1,36 @@
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: antiquewhite;
+    position: relative;
+}
+.container .item{
+    border: 1px solid aquamarine;
+    display: block;
+}
+.container .item:nth-child(1){
+    width: 140px;
+    height: 100px;
+    background-color: blueviolet;
+    position: relative;
+    top: 120px;
+    left: 100px;
+    z-index: 999;
+}
+.container .item:nth-child(2){
+    width: 120px;
+    height: 120px;
+    background-color: rosybrown;
+    position: relative;
+    left: 100px;
+    z-index: 5;
+}
+.container .item:nth-child(3){
+    width: 100px;
+    height: 140px;
+    background-color: crimson;
+    position: relative;
+    top: -120px;
+    left: 100px;
+    z-index: 4;
+}
