@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <label for="darkModeCheckbox">다크 모드 활성화</label>
+    <input type="checkbox" id="darkModeCheckbox">
+    <h1 id="test1"></h1>
+    <h1 id="test2"></h1>
+    <script>
+        const darkModeCheckbox = document.getElementById('darkModeCheckbox');
+        const body = document.body;
+
+    // 페이지 로드 시 사용자 설정에 따라 다크 모드 적용
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          body.classList.add('dark-mode');
+          darkModeCheckbox.checked = true;
+        }
+
+    // 체크박스 상태 변경 시 다크 모드 적용/해제
+        darkModeCheckbox.addEventListener('change', () => {
+        if (darkModeCheckbox.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        }
+        else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        });
+        let time = new Date().getHours();
+        let msg;
+        document.getElementById("test1").innerHTML = "time ="+time;
+        if(6<=time&&time <= 18){
+            msg = "좋은 낮이에요.";
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkmode', 'disabled');
+        }
+        else{
+            msg = "좋은 밤 되세요.";
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        }
+        document.getElementById("test2").innerHTML = msg;
+    </script>
+</body>
+</html>
