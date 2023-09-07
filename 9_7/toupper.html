@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function upper(){
+            let s = document.getElementById("id").value;
+            let result = s.toUpperCase();
+            document.getElementById("result").innerHTML = result;
+        }
+        function lower(){
+            let l = document.getElementById("class").value;
+            let result = l.toLowerCase();
+            document.getElementById("ret").innerHTML = result;
+        }
+
+    </script>
+    대문자를 소문자로 변환: <input type="text" id="class" size="10">
+    <button onclick="lower()">변환</button><br>
+    소문자를 대문자로 변환: <input type="text" id="id" size="10">
+    <button onclick="upper()">변환</button>
+    <h2 id="ret">변환한 문자 출력</h2>
+    <h2 id = "result">변환한 문자 출력</h2>
+</body>
+</html>
