@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>과일들의 리스트</p>
+        <ul>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>오렌지</li>
+        </ul>
+    </div>
+    <script>
+        let myDiv = document.getElementsByTagName("div")[0];
+        let myP = myDiv.firstChild;
+        let myUl = myP.nextSibling;
+    </script>
+</body>
+</html>

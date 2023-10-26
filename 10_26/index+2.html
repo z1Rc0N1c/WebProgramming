@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>주사위 굴리기</title>
+    <style>
+        * {
+            font-family: 굴림, sans-serif;
+            text-align: center;
+            background-color: black;
+        }
+        .text{
+            color: orange;
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 30px;
+        }
+        #dice {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            background-color: orange;
+            border: 1px solid white;
+            border-radius: 10px;
+            font-size: 100px;
+            color: black;
+        }
+    </style>
+    <script>
+        function roll() {
+            let diceNumber = Math.floor(Math.random()*6)+1;
+            document.getElementById("dice").innerHTML = diceNumber;
+        };
+    </script>
+</head>
+
+<body>
+    <h3 class="text"><<<<<주사위 굴리기 오락질>>>>></h3>
+    <p id="dice" class="text"> </p>
+    <button onclick="roll()" class="text">A주사위N굴리기A</button>
+</body>
+
+</html>

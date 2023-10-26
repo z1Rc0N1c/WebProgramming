@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>첫 번째 p 요소</p>
+    <p>두 번째 p 요소</p>
+    <p id="special"></p>
+    <script>
+        let eleArray;
+        eleArray = document.getElementsByTagName('p');
+        document.getElementById('special').innerHTML = 'eleArray[0]: '+eleArray[0].innerHTML;
+    </script>
+</body>
+</html>

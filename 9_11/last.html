@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">다음에 학습할 내용은 HTML입니다.</div>
+    <button onclick="replate()">학습이 끝나면 눌러주세요.</button>
+    <script>
+        function replate(){
+            let text = document.getElementById("test").innerHTML;
+            document.getElementById("test").innerHTML = text.replace("HTML", "JAVASCRIPT")
+        }
+    </script>
+</body>
+</html>

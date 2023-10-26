@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            text-align: center;
+            background-color: black;
+        }
+        .text{
+            color: orange;
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 30px;
+        }
+        #board {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #board tr td {
+            border: 1px solid white;
+            background: #34da79;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+        }
+
+        #board tr td.clicked {
+            background: #6c5ee7;
+        }
+
+        #board tr td.mine {
+            background: #FF0000;
+        }
+        #box{
+            width: 175px;
+        }
+        #AAA {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            color: orange;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text"><<<<<지뢰찾기>>>>></h1>
+    <table id="board">
+    </table>
+    <button onclick="genGrid();" class="text" id="box">신규 게임 시작</button>
+</body>
+<p id="AAA">ANA 14기 박형근</p>
+<script>
+    let grid = document.getElementById("board");
+    genGrid();
+
+    function genGrid() {
+        grid.innerHTML = "";
+        for (let i = 0; i < 8; i++) {
+            let row = grid.insertRow(i);
+            for (var j = 0; j < 8; j++) {
+                let cell = row.insertCell(j);
+                cell.onclick = function() {
+                    clickBox(cell);
+                };
+                cell.setAttribute("mine", Math.random() < 0.3 ? "true" : "false");
+            }
+        }
+    }
+
+    function clickBox(cell) {
+        if (cell.getAttribute("mine") === "true") {
+            cell.className = "mine";
+            alert("게임이 종료되었습니다.");
+        } else {
+            cell.className = "clicked";
+        }
+    }
+</script>
+</html>

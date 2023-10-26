@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 3;
+        function insert(){
+            let parent = document.getElementById("parent");
+            var newRow = parent.insertRow();
+            var newCell1 = newRow.insertCell(0); // Corrected: insertCell() should be called on newRow
+            var newCell2 = newRow.insertCell(1); // Corrected: insertCell() should be called on newRow
+            newCell1.innerText = `(${i},1) 셀`;
+            newCell2.innerText = `(${i},2) 셀`;
+            i++;
+        }
+    </script>
+</head>
+<body>
+    <table border="1" id="parent">
+        <tr>
+            <th>(1,1) 셀</th>
+            <th>(1,2) 셀</th>
+        </tr>
+        <tr>
+            <td>(2,1) 셀</td>
+            <td>(2,2) 셀</td>
+        </tr>
+    </table>
+    <button onclick="insert()">행 추가</button>
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function insert(){
+            let parent = document.getElementById("parent");
+            var newRow = parent.insertRow();
+            var newCell1 = parent.insertCell(0);
+            var newCell2 = parent.insertCell(1);
+            newCell1.innerText = "(3,1) 셀";
+            newCell2.innerText = "(3,2) 셀";
+        }
+    </script>
+</head>
+<body>
+    <table border="1" id="parent">
+        <tr>
+            <th>(1,1) 셀</th>
+            <th>(1,2) 셀</th>
+        </tr>
+        <tr>
+            <td>(2,1) 셀</td>
+            <td>(2,2) 셀</td>
+        </tr>
+    </table>
+    <button onclick="insert()">행 추가</button>
+</body>
+</html>
+-->
