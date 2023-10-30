@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <div id="box" style="height: 75px; width: 160px; background-color: yellow;" onmouseenter="box()" onmouseleave="boxout()">마우스를 올려주세요!</div>
+    <script>
+        function box(){
+            let str = document.getElementById('box').innerHTML;
+            str = "감사합니다.";
+            document.getElementById('box').innerHTML = str;
+        }
+        function boxout(){
+            let str = document.getElementById('box').innerHTML;
+            str = "마우스를 올려주세요!";
+            document.getElementById('box').innerHTML = str;
+        }
+    </script>
+</body>
+</html>
