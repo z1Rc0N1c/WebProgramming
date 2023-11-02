@@ -1,0 +1,107 @@
+<!--<html>
+<head>
+    <script>
+        function showFailureMessage() {
+            alert("시간이 끝났습니다. 실패!");
+        }
+        function calcul() {
+            let correct = document.getElementById('problem').value;
+            let answer = document.getElementById('answer').value;
+            let solution = eval(correct);
+            console.log(solution, answer);
+            if(solution == parseInt(answer)){
+                alert("맞았습니다!");
+            }else{
+                alert(`틀렸습니다! 정답은 ${solution}`);
+            }
+            let n1 = Math.floor(Math.random()*10+1);
+            let n2 = Math.floor(Math.random()*10+1);
+            let n3 = Math.floor(Math.random()*10+1);
+            let n4 = Math.floor(Math.random()*10+1);
+            let s = `${n1}/${n2}*${n3}-${n4}`;
+            document.getElementById('problem').value = s;
+        }
+        // 5초 후에 showFailureMessage 함수를 실행하여 실패 메시지를 표시합니다.
+        setTimeout(showFailureMessage, 5000); // 5초(5000 밀리초) 후에 실행
+    </script>
+</head>
+<body>
+        <h1>Math Quiz</h1>
+        <input type="text" id="problem" value="12*2+20-30"><br>
+        <input type="text" id="answer">
+        <button onclick="calcul()">정답 알아보기</button>
+</body>-->
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <h1>Math Quiz</h1>
+    <input type="text" id="problem">
+    <input type="text" id="answer">
+    <button onclick="startQuiz()">시작</button>
+    <button onclick="checkAnswer()">정답 확인</button>
+    <p>남은 시간: <span id="timer">10</span></p>
+</body>
+</html>
+<script>
+    var timer;
+    var timeRemaining = 10; // 초기 타이머 값 (초)
+
+    function showTimer() {
+        var timerDisplay = document.getElementById('timer');
+        timerDisplay.innerHTML = timeRemaining + " 초";
+        timeRemaining--;
+
+        if (timeRemaining < 0) {
+            clearInterval(timer);
+            alert("시간이 끝났습니다. 실패!");
+            resetQuiz();
+        }
+    }
+
+    function resetQuiz() {
+        clearInterval(timer);
+        document.getElementById('problem').value = '';
+        document.getElementById('answer').value = '';
+        document.getElementById('timer').innerHTML = "10 초";
+    }
+
+    function startTimer() {
+        timeRemaining = 10; // 초기 타이머 값을 10으로 설정
+        showTimer();
+        timer = setInterval(showTimer, 1000); // 1초마다 타이머 업데이트
+    }
+
+    function startQuiz() {
+        resetQuiz();
+        startTimer();
+        document.getElementById('problem').value = generateRandomProblem();
+    }
+
+    function checkAnswer() {
+        let correct = document.getElementById('problem').value;
+        let answer = document.getElementById('answer').value;
+        let solution = eval(correct);
+
+        if (solution == parseInt(answer)) {
+            alert("맞았습니다!");
+        } else {
+            alert(`틀렸습니다! 정답은 ${solution}`);
+        }
+
+        resetQuiz();
+        startQuiz(); // 새로운 문제로 이동
+    }
+
+    function generateRandomProblem() {
+        let n1 = Math.floor(Math.random() * 10 + 1);
+        let n2 = Math.floor(Math.random() * 10 + 1);
+        let n3 = Math.floor(Math.random() * 10 + 1);
+        let n4 = Math.floor(Math.random() * 10 + 1);
+        return `${n1}+${n2}*${n3}-${n4}`;
+    }
+
+</script>
+
