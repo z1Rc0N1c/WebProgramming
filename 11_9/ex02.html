@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>신호등</title>
+    <style>
+        #traffic-signal {
+            border: 8px solid black;
+            padding: 10px 10px;
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        #traffic-signal > div {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+
+        #green {
+            background-color: green;
+            border-color: black;
+        }
+
+        #yellow {
+            background-color: yellow;
+            border-color: black;
+        }
+
+        #red {
+            background-color: red;
+            border-color: black;
+        }
+    </style>
+</head>
+<body onload="startTrafficSignal()">
+    <div id="traffic-signal">
+        <div id="green"></div>
+        <div id="yellow"></div>
+        <div id="red"></div>
+    </div>
+    <div id="line1"></div>
+    <div id="line2"></div>
+    <div id="timer"></div>
+    <script>
+        function startTrafficSignal() {
+            var green = document.getElementById("green");
+            var red = document.getElementById("red");
+            var yellow = document.getElementById("yellow");
+            var timerDisplay = document.getElementById("timer");
+            var signalDuration = 5000; // 각 신호 상태의 지속 시간 설정
+            var yellowDuration = 1000; // 노란불의 지속 시간 설정
+            var remainingTime = signalDuration; // 초기에는 초록불 상태이므로 남은 시간을 신호 지속 시간으로 설정
+
+            function updateTimer() {
+                timerDisplay.textContent = Math.ceil(remainingTime / 1000) + " 초 남음";
+            }
+
+            function switchLights(greenOn, yellowOn, redOn) {
+                green.style.backgroundColor = greenOn ? "green" : "white";
+                yellow.style.backgroundColor = yellowOn ? "yellow" : "white";
+                red.style.backgroundColor = redOn ? "red" : "white";
+            }
+
+            function changeSignal() {
+                switchLights(true, false, false); // 초록불 켜기
+
+                var greenTimer = setInterval(function () {
+                    remainingTime -= 1000;
+                    updateTimer();
+
+                    if (remainingTime <= 0) {
+                        clearInterval(greenTimer);
+                        switchLights(false, true, false); // 노란불 켜기
+                        remainingTime = yellowDuration;
+                        updateTimer();
+
+                        var yellowTimer = setInterval(function () {
+                            remainingTime -= 1000;
+                            updateTimer();
+
+                            if (remainingTime <= 0) {
+                                clearInterval(yellowTimer);
+                                switchLights(false, false, true); // 빨간불 켜기
+                                remainingTime = signalDuration;
+                                updateTimer();
+
+                                var redTimer = setInterval(function () {
+                                    remainingTime -= 1000;
+                                    updateTimer();
+
+                                    if (remainingTime <= 0) {
+                                        clearInterval(redTimer);
+                                        setTimeout(function () {
+                                            changeSignal(); // 루프 반복
+                                        }, 0);
+                                    }
+                                }, 1000);
+                            }
+                        }, 1000);
+                    }
+                }, 1000);
+            }
+
+            updateTimer(); // 초기 타이머 값 설정
+            changeSignal(); // 트래픽 신호 애니메이션 시작
+        }
+    </script>
+</body>
+</html>
