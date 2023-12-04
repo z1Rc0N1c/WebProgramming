@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    margin: 10px;
+    padding: 10px;
+    height : 100px;
+    width: 150px;
+    background-color: royalblue;
+    > div{
+        font-family: 'Nanum Pen Script', cursive;
+        font-size: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

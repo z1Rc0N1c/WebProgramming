@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 10px;
+            padding: 10px;
+            height : 100px;
+            width: 150px;
+            background-color: royalblue;
+            > div{
+                font-family: 'Nanum Pen Script', cursive;
+                font-size: 30px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class = "box">
+    <div>
+        <p>162</p><p>2분</p>
+    </div>
+    <div>
+        혼잡
+
+    </div>
+</div>
+<script>
+    window.onload = function() {
+        // box 클래스를 가진 div 요소 생성
+        const boxElement = document.createElement('div');
+        boxElement.classList.add('box');
+
+        // 내부에 추가될 내용 생성
+        const contentWrapper = document.createElement('div');
+        const timeParagraph = document.createElement('p');
+        timeParagraph.textContent = '2분'; // 시간 설정
+        const busNumberParagraph = document.createElement('p');
+        busNumberParagraph.textContent = '162'; // 버스 번호 설정
+        contentWrapper.appendChild(busNumberParagraph);
+        contentWrapper.appendChild(timeParagraph);
+
+        // 혼잡도 설정
+        const congestionElement = document.createElement('div');
+        congestionElement.textContent = '혼잡';
+
+        // 요소들을 box에 추가
+        boxElement.appendChild(contentWrapper);
+        boxElement.appendChild(congestionElement);
+
+        // body에 box 추가
+        document.body.appendChild(boxElement);
+    };
+</script>
+</body>
+</html>
