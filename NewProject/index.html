@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <title>음악 플레이어</title>
+</head>
+<body>
+  <h1 class="char">음악 플레이어</h1>
+  
+  <div id="player-controls">
+    <button id="prev-button">이전 곡</button>
+    <button id="play-pause-button">재생</button>
+    <button id="next-button">다음 곡</button><br>
+    <button id="shuffle-button">순서</button>
+  </div>
+  
+  <div id="song-info-container">
+    <p id="song-info" class="char">곡 정보</p>
+    <p id="artist-info" class="char">아티스트 정보</p>
+  </div>
+  <h2 class="cap">Progress</h2>
+  <div id="progress-container" class="slide">
+    <input type="range" id="progress-bar" min="0" max="100" value="0">
+  </div>
+  <h2 class="cap">Volume</h2>
+  <div id="volume-control" >
+    <input type="range" id="volume-slider" class="slide" min="0" max="1" step="0.01" value="0.5">
+  </div>
+  <div id="playlist-order" class="char">
+    <p>플레이리스트 순서: <span id="order-info"></span></p>
+  </div>
+  <audio id="audio-player" controls>
+    <source src="" type="audio/mpeg" id="audio-source">
+    Your browser does not support the audio element.
+  </audio>
+  <input type="file" id="file-input"><br>
+  <input type="text" id="song-input"><br>
+  <button id="add-song-button" onclick="handleFileSelect(event)">곡 추가</button>
+
+  <script src="./JS/script.js"></script>
+</body>
+</html>

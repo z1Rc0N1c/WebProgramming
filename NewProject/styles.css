@@ -1,0 +1,68 @@
+*{
+  background-color: black;
+}
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+  }
+  .char{
+    color: aqua;
+  }
+  .player-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .cap{
+    color: azure;
+  }
+  button {  
+    background-color: white;
+    color: rgb(65, 105, 225);
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+
+input[type="range"] {
+    width: 30%;
+  }
+  .slide{
+    color: aqua;
+  }
+  .scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #progress-bar{
+    height: 10px;
+  }
+  #artist-info {
+    text-align: center;
+  }
+
+  .scrolling-text #audio-source {
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+    animation: scroll 10s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+#file-input {
+  display: block; /* 블록 요소로 설정하여 전체 너비를 차지하도록 함 */
+  margin: 0 auto; /* 가운데 정렬을 위해 왼쪽과 오른쪽 마진을 자동으로 조절 */
+  align-content: center; /* 내부 텍스트를 가운데 정렬 */
+}
+#song-input{
+  background-color: white;
+}
